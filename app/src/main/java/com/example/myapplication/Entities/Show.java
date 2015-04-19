@@ -5,6 +5,8 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
+import java.util.List;
+
 /**
  * Created by Jeff on 20-4-2015.
  */
