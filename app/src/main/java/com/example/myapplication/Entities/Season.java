@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Created by Jeff on 20-4-2015.
  */
+@Root(strict=false)
 public class Season {
     private String episodeNo;
     private String type;

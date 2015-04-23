@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Created by Jeff on 20-4-2015.
  */
+@Root(strict=false)
 public class Show {
 
     @Attribute(name = "type", required = false)
@@ -25,11 +26,15 @@ public class Show {
     @Element(required = false)
     private String link;
     @Element(required = false)
+    private String classification;
+    @Element(required = false)
     private String started;
     @Element(required = false)
     private String ended;
     @Element(required = false)
     private String image;
+    @Element(required = false)
+    private String runtime;
     @Element(required = false)
     private String origin_country;
     @Element(required = false)
