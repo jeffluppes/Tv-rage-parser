@@ -3,13 +3,15 @@ package com.example.myapplication.Parsers;
 import android.os.AsyncTask;
 import org.springframework.http.converter.xml.SimpleXmlHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
+
+import com.example.myapplication.Entities.Results;
 import com.example.myapplication.Entities.ShowList;
 import com.example.myapplication.Parsers.Handlers.ListHandler;
 
 /**
  * Created by Jeff on 11-5-2015.
  */
-    public class ShowListParser extends AsyncTask<String, Void, ShowList> {
+    public class ShowListParser extends AsyncTask<String, Void, Results> {
 
         private ListHandler handler;
 
@@ -31,16 +33,16 @@ import com.example.myapplication.Parsers.Handlers.ListHandler;
         }
 
         @Override
-        protected ShowList doInBackground(String... searches) {
-            final String url = "http://services.tvrage.com/feeds/search.php?show="+searches[0];
+        protected Results doInBackground(String... searches) {
+            final String url = "http://services.tvrage.com/feeds/search.php?show=breakingbad";
 
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new SimpleXmlHttpMessageConverter());
-            ShowList showList = restTemplate.getForObject(url, ShowList.class);
+            Results showList = restTemplate.getForObject(url, Results.class);
             return showList;
         }
 
-        protected void onPostExecute(ShowList list) {
+        protected void onPostExecute(Results list) {
             if(handler != null) {
                 handler.handleList(list);
             }
