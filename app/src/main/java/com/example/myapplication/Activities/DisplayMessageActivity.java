@@ -23,7 +23,7 @@ public class DisplayMessageActivity extends Activity {
         super.onCreate(savedInstanceState);
         // Get the message from the intent
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String message; // = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         setContentView(R.layout.main);
 
         // Find the ListView resource.
