@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.R;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnQueryTextListener {
 
     SearchView search;
 
@@ -36,29 +36,21 @@ public class MainActivity extends Activity {
         });
 
         //*** setOnQueryTextListener ***
-        search.setOnQueryTextListener(new OnQueryTextListener() {
+        search.setOnQueryTextListener(this);
+    }
 
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                // TODO Auto-generated method stub
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        intent.putExtra("query", query);
+        startActivity(intent);
 
-                Toast.makeText(getBaseContext(), "U heeft gezocht naar "+query,
-                        Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, DisplayMessageActivity.class);
-                //intent.putExtra("com.example.myapplication.MESSAGE", query);
-                startActivity(intent);
-                return false;
-            }
+        return true;
+    }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                // TODO Auto-generated method stub
-
-                //	Toast.makeText(getBaseContext(), newText,
-                //  Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
+    @Override
+    public boolean onQueryTextChange(String query) {
+        return false;
     }
 
     @Override

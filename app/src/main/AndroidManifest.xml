@@ -26,10 +26,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
         </activity>
-        <activity
-            android:name=".Activities.ShowListActivity"
-            android:label="@string/title_activity_show_list" >
-        </activity>
     </application>
 
 </manifest>

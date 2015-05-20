@@ -9,7 +9,7 @@ import java.util.List;
  * ITS A LIST OF SHOWS. WOW SUCH SURPRISE.
  */
 @Root(strict=false)
-public class ShowList {
+public class Results {
 
     private List<Show> shows;
 
