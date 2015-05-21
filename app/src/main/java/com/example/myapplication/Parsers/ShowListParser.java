@@ -34,7 +34,7 @@ import com.example.myapplication.Parsers.Handlers.ListHandler;
 
         @Override
         protected Results doInBackground(String... searches) {
-            final String url = "http://services.tvrage.com/feeds/search.php?show=breakingbad";
+            final String url = "http://services.tvrage.com/feeds/search.php?show="+searches[0];
 
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new SimpleXmlHttpMessageConverter());

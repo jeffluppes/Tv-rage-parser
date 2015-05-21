@@ -8,7 +8,8 @@ import java.util.List;
  * Created by Jeff on 13-5-2015.
  * ITS A LIST OF SHOWS. WOW SUCH SURPRISE.
  */
-@Root(strict=false)
+@Root(name="Results", strict=false)
+
 public class ShowList {
 
     private List<Show> shows;

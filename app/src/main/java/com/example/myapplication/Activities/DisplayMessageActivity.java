@@ -21,6 +21,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,6 +103,7 @@ public class DisplayMessageActivity extends ListActivity implements LoaderManage
     @Override
     public void handleList(Results showList) {
         for (Show show : showList.getShows()) {
+            Log.w("ShowId ", show.getShowid());
             Toast.makeText(this, show.getShowid(), Toast.LENGTH_SHORT);
         }
     }
